@@ -1,0 +1,13 @@
+version: "3.3"
+
+services:
+  app:
+    image: haskell:8
+    command: sh -c "curl https://gitlab.haskell.org/haskell/ghcup/raw/master/bootstrap-haskell -sSf | sh"
+    working_dir: /src
+    volumes:
+        - ./src:/src
+    entrypoint: "/bin/bash"
+    stdin_open: true
+    tty: true
+    
